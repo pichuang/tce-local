@@ -88,9 +88,9 @@ can use this Kubernetes cluster locally right away.
 Here are the packages available in this repository:
 
 - `local-core`: base package including
-  [cert-manager](https://tanzucommunityedition.io/docs/latest/package-readme-cert-manager-1.5.4/)
-  and [Contour](https://tanzucommunityedition.io/docs/latest/package-readme-contour-1.19.1/)
-  (ingress controller), with a default configuration suited for local use
+  [cert-manager](https://tanzucommunityedition.io/docs/latest/package-readme-cert-manager-1.5.4/),
+  [Contour](https://tanzucommunityedition.io/docs/latest/package-readme-contour-1.19.1/) (ingress controller) and
+  [Metrics Server](https://github.com/vmware-tanzu/community-edition/tree/main/addons/packages/metrics-server/0.5.1), with a default configuration suited for local use
 - `local-monitoring`: package including
   [Prometheus](https://tanzucommunityedition.io/docs/latest/package-readme-prometheus-2.27.0/) /
   [Grafana](https://tanzucommunityedition.io/docs/latest/package-readme-grafana-7.5.7/)
@@ -157,6 +157,16 @@ tanzu package install local-knative --package-name knative.local.community.tanzu
 In a matter of minutes, you'll be able to deploy scale-to-zero apps thanks to TCE and
 this opinionated package.
 Your Knative services will be available under `<name>.<ns>.kn.127.0.0.1.nip.io`.
+
+### Deploying all packages
+
+Looking for a quick way to deploy all packages? I've got you covered!
+
+Use this command to deploy all packages tailored for local use to your cluster:
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/alexandreroman/tce-local/main/tce-local-install-all.yml
+```
 
 ## Deploying apps to your local Kubernetes cluster
 
